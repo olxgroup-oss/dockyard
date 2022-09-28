@@ -1,0 +1,4 @@
+#! /bin/bash
+
+go run github.com/segmentio/golines -w -m 80 .
+git add .

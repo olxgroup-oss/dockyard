@@ -1,0 +1,19 @@
+AWS_CONFIG:
+  AWS_REGION: <aws-region>
+  AWS_PROFILE: <aws-user-profile>
+LOGGING:
+  LEVEL: DEBUG
+ASG_ROLLOUT:
+  IGNORE_NOT_FOUND: < true | false >
+  FORCE_DELETE_PODS: < false | true >
+  EKS_CLUSTER_NAME: <eks-cluster-name>
+  PERIOD_WAIT:
+    # in seconds
+    BEFORE_POST: 60
+    AFTER_BATCH: 30
+    K8S_READY: 10
+    NEW_NODE_ASG_REGISTER: 10
+  TIMEOUTS:
+    # in seconds
+    NEW_NODE_ASG_REGISTER: 600
+  PRIVATE_REGISTRY:  "registry.example.com"

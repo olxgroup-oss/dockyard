@@ -1,0 +1,20 @@
+.DS_Store
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+.idea
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+config.yaml
+
+*.log
+
+Dockerfile
