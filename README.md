@@ -77,17 +77,12 @@ LOGGING:
 LEVEL: DEBUG
 ```
 
-### Build Docker Image from source 
+## Build dockyard from source
 
-- git clone dockyard.git
-- cd dockyard
-- docker build --tag dockyard:latest .
-- docker run --name dockyard dockyard:latest
+```bash
+go build ./cmd/main.go
 
-
-### Run dockyard using docker
-
-
+```
 ## Features
 - Preflight Checks
   - Public Images used : To list all the images that are pulled from public registries. 
@@ -162,14 +157,14 @@ which essentially means there should be zero voluntary evictions. ( This can cau
 
 
 #### config.yaml
-  ```yaml
+```yaml
 AWS_CONFIG:
   AWS_REGION: <region_name>
   AWS_PROFILE: <aws_profile>
 LOGGING:
   LEVEL: DEBUG
 ASG_ROLLOUT:
-   EKS_CLUSTER_NAME: <eks-cluster-name>
+  EKS_CLUSTER_NAME: <eks-cluster-name>
   IGNORE_NOT_FOUND: true
   FORCE_DELETE_PODS: false
   PERIOD_WAIT:

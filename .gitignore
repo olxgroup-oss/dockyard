@@ -17,4 +17,5 @@ config.yaml
 
 *.log
 
-Dockerfile
+
+main

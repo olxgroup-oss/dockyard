@@ -1,7 +1,5 @@
 # Frequently Asked Questions
 
-${toc}
-
 
 ### What happens if dockyard is interrupted while a rollout was in progress ?
 Dockyard maintains the state of rollout by labelling the node with a label `dockyard.io/node-state`, using this label it decides if node is already updated or not.
@@ -20,7 +18,7 @@ By default, all PDBs are honored but we can override this behaviour by setting A
 ### How are pods terminated during rollouts ?
 Pods are gracefully terminated using the eviction api respecting terminationGracePeriodSeconds used by workload.
 
-### Dockyard takes too much time to during the rollout  ?
+### Dockyard takes too much time during the rollout  ?
 Currently, dockyard rolls out new nodes in a batch of size 1 i.e dockyard will wait for 1 node to get fully updated before starting a new rollout. ( At max 1 extra node is required to perform the entire asg rollout ).
 Usually it takes ~5 min to provision a new ec2 instance and get it registered with k8s cluster. So untill we have a new healthy node in the cluster dockyard would simply wait and won't start the workload eviction.  
 We are planning to support dynamic batch sizes in future iterations of dockyard.
